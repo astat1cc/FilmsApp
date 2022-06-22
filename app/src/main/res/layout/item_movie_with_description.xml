@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/item_movie_with_description_vertical_margin"
+    android:orientation="horizontal">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/movie_image"
+        android:layout_width="@dimen/item_movie_poster_width"
+        android:layout_height="@dimen/item_movie_poster_height"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="9dp"
+        tools:src="@color/teal_200" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:maxLines="2"
+            android:layout_marginHorizontal="@dimen/item_movie_title_horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:textSize="@dimen/item_saved_movie_text_size"
+            tools:text="The Godfather" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:layout_gravity="bottom"
+            tools:text="A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground fight clubs forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion." />
+
+    </FrameLayout>
+
+</LinearLayout>

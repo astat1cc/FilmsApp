@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/errorCaseHolder"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/network_error_icon_size"
+        android:layout_height="@dimen/network_error_icon_size"
+        android:src="@drawable/ic_network_error_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:gravity="center"
+        android:text="@string/network_error_message"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/tryAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_margin_top"
+        android:text="@string/try_again"
+        android:textAllCaps="false" />
+
+</LinearLayout>
