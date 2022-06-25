@@ -16,8 +16,4 @@ class DataModule {
     @Provides
     fun provideMoviesRepository(movieApi: MovieApi, movieDao: MovieDao): MoviesRepository =
         MoviesRepositoryImpl(movieApi, movieDao)
-
-
-//    @Binds
-//    abstract fun bindMovieRepositoryImpl_to_MovieRepository(moviesRepositoryImpl: MoviesRepositoryImpl): MoviesRepository
 }

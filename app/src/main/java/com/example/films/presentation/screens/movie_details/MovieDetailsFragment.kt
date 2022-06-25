@@ -155,15 +155,12 @@ class MovieDetailsFragment : Fragment() {
             movie.backdrop_path?.let { loadMoviePoster(it) }
             titleTextView.text = movie.title
 
-            with(favouriteButton) {
-                visibility = View.VISIBLE
-            }
+            favouriteButton.visibility = View.VISIBLE
 
             descriptionTextView.text = movie.overview
             firstRowOfDetailInfoTextView.text = getFirstRowText(movie)
             secondRowOfDetailInfoTextView.text = getSecondRowText(movie)
             setMovieRateText(movie.vote_average)
-
         }
     }
 
@@ -175,7 +172,7 @@ class MovieDetailsFragment : Fragment() {
                 else -> ContextCompat.getColor(requireContext(), R.color.lowRateTextColor)
             }
             with(binding.movieRateTextView) {
-                text = rate.toString()
+                text = rate.setDigitsCountAfterPoint(1)
                 setTextColor(textColor)
             }
         }
@@ -228,4 +225,7 @@ class MovieDetailsFragment : Fragment() {
         val runtime = movie.runtime?.let { minutesToRuntimeFormat(it) }
         return "$year, $runtime"
     }
+
+    private fun Double.setDigitsCountAfterPoint(digits: Int) =
+        "%.${digits}f".format(this).replace(',', '.')
 }
